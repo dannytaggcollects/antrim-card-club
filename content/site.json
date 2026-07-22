@@ -1,7 +1,7 @@
 {
   "site": {
     "clubName": "Antrim Card Club",
-    "tagline": "Collect. Trade. Connect.",
+    "tagline": "Collect. Connect.",
     "organiser": "Danny Tagg Collects",
     "navigation": {
       "homeLabel": "Home",
@@ -15,33 +15,33 @@
     }
   },
   "home": {
-    "eyebrow": "Antrim’s collector community",
-    "title": "Good cards. Great people.",
-    "intro": "A welcoming local meet-up for trading card collectors of every age and experience level — hosted by Danny Tagg Collects.",
-    "sectionTitle": "A club made for collectors",
+    "eyebrow": "Community Focused",
+    "title": "More Than Just A Card Show. Join A Real Community, Monthly.",
+    "intro": "A welcoming monthly community event for trading card collectors of every age and experience level — hosted by Danny Tagg Collects.",
+    "sectionTitle": "A Club Made For All Collectors ",
     "sectionIntro": "Bring your binder, discover something new and spend time with people who get just as excited about the hobby as you do.",
-    "featureOneTitle": "Trade with confidence",
-    "featureOneText": "Meet collectors face to face, compare collections and make fair, friendly trades.",
-    "featureTwoTitle": "Find new favourites",
-    "featureTwoText": "Explore cards, sets and collecting styles from across the local community.",
+    "featureOneTitle": "Buy, Sell and Trade With Confidence",
+    "featureOneText": "With a rigorous vendor selection process, rest assured you will be dealing with the best local vendors from the scene. Buy, Sell and Trade at Antrim Card Club with confidence.",
+    "featureTwoTitle": "Meet The Community",
+    "featureTwoText": "Meet likeminded people who share in your passion for collecting. Make trades, compare collections and make new friends!",
     "featureThreeTitle": "Everyone’s welcome",
-    "featureThreeText": "New to collecting or years into the hobby? There’s a place for you at the table.",
-    "storyTitle": "Built around the joy of the hobby",
-    "storyText": "Danny Tagg Collects brings collectors together in a relaxed, friendly space where the cards start the conversation."
+    "featureThreeText": "New to collecting or years into the hobby? There’s a place for everyone at Antrim Card Club!",
+    "storyTitle": "Built Around The Joy Of The Hobby",
+    "storyText": "Antrim Card Club brings collectors together in a relaxed, friendly space where the cards start the conversation m."
   },
   "about": {
     "title": "Cards bring us together.",
     "intro": "Antrim Card Club is a welcoming place to share the hobby, grow your collection and meet fellow fans from across the area.",
     "mainTitle": "More than a card meet",
-    "mainText": "We’re building a genuine local community around collecting. The club creates an easy-going space to browse, talk, trade and learn — without pressure or pretence.",
-    "mainTextTwo": "Whether you’re chasing a favourite character, completing a set, collecting for the artwork or just getting started, you’ll find people who share the excitement.",
+    "mainText": "We’re building a genuine local community around collecting. The club creates an easy-going space to browse, buy, sell, trade and connect. Never any pressure. Come and experience it for yourself!",
+    "mainTextTwo": "Whether you’re chasing a favourite card, completing a set, collecting for the artwork or just getting started, you’ll find people who share in your passion! ",
     "organiserTitle": "Meet Danny Tagg Collects",
-    "organiserText": "Danny is the collector behind the club — bringing energy, knowledge and a real love for the community to every event."
+    "organiserText": "Hi, I am Danny, the founder of Antrim Card Club. A life long Pokemon fan, my goal is trying to create a space I wish existed for me when I was growing up collecting Pokemon. \n\nI firmly believe that what makes this hobby magical is the community behind it. So Antrim Card Club has been created to highlight this community and create a friendly and welcoming space that collectors and fans of the hobby of all levels can meet, connect and of course chase those grails!"
   },
   "tickets": {
-    "title": "Save your spot.",
+    "title": "Save Your Spot!",
     "intro": "Ticket details for the next Antrim Card Club meet will be announced here. Register your interest and we’ll help you stay in the loop.",
-    "eventName": "Antrim Card Club Meet",
+    "eventName": "Antrim Card Club ",
     "eventDescription": "Date, venue and admission details are being finalised. Contact Danny for the latest update or to register your interest.",
     "mode": "direct",
     "eventbriteUrl": "https://www.eventbrite.co.uk/e/antrim-card-club-august-edition-tickets-1992780968521"
