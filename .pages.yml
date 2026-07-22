@@ -1,0 +1,91 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: website
+    label: Website text
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: site
+        label: General details
+        type: object
+        fields:
+          - { name: clubName, label: Club name, type: string, required: true }
+          - { name: tagline, label: Short tagline, type: string, required: true }
+          - { name: organiser, label: Organiser name, type: string, required: true }
+          - name: navigation
+            label: Navigation links
+            type: object
+            fields:
+              - { name: homeLabel, label: Home link text, type: string, required: true }
+              - { name: homeUrl, label: Home link destination, type: string, required: true }
+              - { name: aboutLabel, label: About link text, type: string, required: true }
+              - { name: aboutUrl, label: About link destination, type: string, required: true }
+              - { name: contactLabel, label: Contact link text, type: string, required: true }
+              - { name: contactUrl, label: Contact link destination, type: string, required: true }
+              - { name: ticketsLabel, label: Tickets link text, type: string, required: true }
+              - { name: ticketsUrl, label: Tickets link destination, type: string, required: true }
+      - name: home
+        label: Home page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: intro, label: Introduction, type: rich-text, required: true }
+          - { name: sectionTitle, label: Features heading, type: string }
+          - { name: sectionIntro, label: Features introduction, type: rich-text }
+          - { name: featureOneTitle, label: Feature 1 heading, type: string }
+          - { name: featureOneText, label: Feature 1 text, type: rich-text }
+          - { name: featureTwoTitle, label: Feature 2 heading, type: string }
+          - { name: featureTwoText, label: Feature 2 text, type: rich-text }
+          - { name: featureThreeTitle, label: Feature 3 heading, type: string }
+          - { name: featureThreeText, label: Feature 3 text, type: rich-text }
+          - { name: storyTitle, label: Story heading, type: string }
+          - { name: storyText, label: Story text, type: rich-text }
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: intro, label: Introduction, type: rich-text }
+          - { name: mainTitle, label: About heading, type: string }
+          - { name: mainText, label: About text, type: rich-text }
+          - { name: mainTextTwo, label: Second paragraph, type: rich-text }
+          - { name: organiserTitle, label: Organiser heading, type: string }
+          - { name: organiserText, label: Organiser text, type: rich-text }
+      - name: tickets
+        label: Tickets page
+        type: object
+        fields:
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: intro, label: Introduction, type: rich-text }
+          - { name: eventName, label: Event name, type: string }
+          - { name: eventDescription, label: Event description, type: rich-text }
+          - name: mode
+            label: Ticket display
+            type: select
+            options:
+              values:
+                - { name: coming-soon, label: Coming soon }
+                - { name: direct, label: Link directly to Eventbrite }
+                - { name: embed, label: Embed Eventbrite booking }
+          - { name: eventbriteUrl, label: Public Eventbrite URL, type: string }
+          - { name: embedUrl, label: Eventbrite embed URL, type: string }
+      - name: contact
+        label: Contact page
+        type: object
+        fields:
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: intro, label: Introduction, type: rich-text }
+          - { name: email, label: Contact email, type: string }
+          - { name: facebookUrl, label: Facebook URL, type: string }
+          - { name: instagramUrl, label: Instagram URL, type: string }
+
+settings:
+  content:
+    merge: direct
+  commit:
+    message: "Update website text"
