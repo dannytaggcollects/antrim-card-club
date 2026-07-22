@@ -43,15 +43,11 @@
     "intro": "Ticket details for the next Antrim Card Club meet will be announced here. Register your interest and we’ll help you stay in the loop.",
     "eventName": "Antrim Card Club Meet",
     "eventDescription": "Date, venue and admission details are being finalised. Contact Danny for the latest update or to register your interest.",
-    "mode": "coming-soon",
-    "eventbriteUrl": "",
-    "embedUrl": ""
+    "mode": "direct",
+    "eventbriteUrl": "https://www.eventbrite.co.uk/e/antrim-card-club-august-edition-tickets-1992780968521"
   },
   "contact": {
     "title": "Let’s talk cards.",
-    "intro": "Questions about the club, tickets, trading or getting involved? Send Danny a message.",
-    "email": "",
-    "facebookUrl": "",
-    "instagramUrl": ""
+    "intro": "Questions about the club, tickets, trading or getting involved? Send Danny a message."
   }
 }
