@@ -27,7 +27,8 @@
     "featureThreeTitle": "Everyone’s Welcome",
     "featureThreeText": "New to collecting or years into the hobby? There’s a place for everyone at Antrim Card Club!",
     "storyTitle": "Built Around The Joy Of The Hobby",
-    "storyText": "Antrim Card Club brings collectors together in a relaxed, friendly space where the cards start the conversation."
+    "storyText": "Antrim Card Club brings collectors together in a relaxed, friendly space where the cards start the conversation.",
+    "quote": "Community is the heart beat of the hobby"
   },
   "about": {
     "title": "Collecting Brings Us Together.",
@@ -36,7 +37,21 @@
     "mainText": "We’re building a genuine local community around collecting. The club creates an easy-going space to browse, buy, sell, trade and connect. Never any pressure. Come and experience the ever growing community for yourself!",
     "mainTextTwo": "Whether you’re chasing a favourite card, completing a set, collecting for the artwork or just getting started, you’ll find people who share in your passion for collecting!",
     "organiserTitle": "Meet Danny Tagg Collects",
-    "organiserText": "Hi, I am Danny, the founder of Antrim Card Club. A life long Pokemon fan, my goal is trying to create a space I wish existed for me when I was growing up collecting Pokemon. \n\nI firmly believe that what makes this hobby magical is the community behind it. So Antrim Card Club has been created to highlight this community and create a friendly and welcoming space that collectors and fans of the hobby of all levels can meet, connect and of course chase those grails!"
+    "organiserText": "Hi, I am Danny, the founder of Antrim Card Club. A life long Pokemon fan, my goal is trying to create a space I wish existed for me when I was growing up collecting Pokemon. \n\nI firmly believe that what makes this hobby magical is the community behind it. So Antrim Card Club has been created to highlight this community and create a friendly and welcoming space that collectors and fans of the hobby of all levels can meet, connect and of course chase those grails!",
+    "galleryTitle": "Club gallery",
+    "galleryIntro": "A few moments from the Antrim Card Club community.",
+    "gallery": [
+      {
+        "image": "assets/danny-tagg-organiser-square.png",
+        "alt": "Danny Tagg Collects with a young collector at a card event",
+        "caption": "Sharing the hobby with the next generation of collectors."
+      },
+      {
+        "image": "assets/antrim-card-club-logo-square.png",
+        "alt": "Antrim Card Club logo",
+        "caption": "Antrim Card Club - collect, trade and connect."
+      }
+    ]
   },
   "tickets": {
     "title": "Save Your Spot!",

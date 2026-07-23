@@ -1,6 +1,8 @@
 media:
   input: assets
-  output: /assets
+  output: assets
+  rename: safe
+  categories: [image]
 
 content:
   - name: website
@@ -45,6 +47,7 @@ content:
           - { name: featureThreeText, label: Feature 3 text, type: rich-text }
           - { name: storyTitle, label: Story heading, type: string }
           - { name: storyText, label: Story text, type: rich-text }
+          - { name: quote, label: Community quote, type: string }
       - name: about
         label: About page
         type: object
@@ -56,6 +59,27 @@ content:
           - { name: mainTextTwo, label: Second paragraph, type: rich-text }
           - { name: organiserTitle, label: Organiser heading, type: string }
           - { name: organiserText, label: Organiser text, type: rich-text }
+          - { name: galleryTitle, label: Gallery heading, type: string }
+          - { name: galleryIntro, label: Gallery introduction, type: text }
+          - name: gallery
+            label: Gallery images
+            type: object
+            list:
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{caption}"
+            fields:
+              - name: image
+                label: Image
+                type: image
+                required: true
+                options:
+                  path: gallery
+                  extensions: [jpg, jpeg, png, webp]
+                  rename: safe
+              - { name: alt, label: Image description, type: string, description: Describe the image for visitors using screen readers. }
+              - { name: caption, label: Caption, type: string }
       - name: tickets
         label: Tickets page
         type: object

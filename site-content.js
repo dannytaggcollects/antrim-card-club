@@ -53,6 +53,64 @@ function updateNavigation(navigation) {
   });
 }
 
+function updateSiteImages() {
+  document.querySelectorAll('.brand img, .hero-art .hero-disc img').forEach((image) => {
+    image.src = 'assets/antrim-card-club-logo-square.png';
+    image.alt = image.alt ? 'Antrim Card Club logo' : '';
+  });
+
+  const organiserImage = document.querySelector('.section-pink .hero-disc img');
+  if (organiserImage) {
+    organiserImage.src = 'assets/danny-tagg-organiser-square.png';
+    organiserImage.alt = 'Danny Tagg Collects with a young collector at a card event';
+  }
+}
+
+function renderGallery(about) {
+  const organiserSection = document.querySelector('.section-pink');
+  if (!organiserSection || !Array.isArray(about.gallery) || !about.gallery.length) return;
+
+  const section = document.createElement('section');
+  section.className = 'section gallery-section';
+  const wrap = document.createElement('div');
+  wrap.className = 'wrap';
+  const header = document.createElement('div');
+  header.className = 'section-head';
+  const headingWrap = document.createElement('div');
+  const eyebrow = document.createElement('span');
+  eyebrow.className = 'eyebrow';
+  eyebrow.textContent = 'From the club';
+  const heading = document.createElement('h2');
+  heading.textContent = about.galleryTitle || 'Club gallery';
+  const intro = document.createElement('p');
+  intro.textContent = about.galleryIntro || '';
+  headingWrap.append(eyebrow, heading);
+  header.append(headingWrap, intro);
+
+  const grid = document.createElement('div');
+  grid.className = 'gallery-grid';
+  about.gallery.forEach((item) => {
+    if (!item?.image) return;
+    const figure = document.createElement('figure');
+    figure.className = 'gallery-card';
+    const image = document.createElement('img');
+    image.src = safeLinkUrl(item.image);
+    image.alt = item.alt || item.caption || '';
+    image.loading = 'lazy';
+    figure.appendChild(image);
+    if (item.caption) {
+      const caption = document.createElement('figcaption');
+      caption.textContent = item.caption;
+      figure.appendChild(caption);
+    }
+    grid.appendChild(figure);
+  });
+
+  wrap.append(header, grid);
+  section.appendChild(wrap);
+  organiserSection.after(section);
+}
+
 fetch('content/site.json')
   .then((response) => {
     if (!response.ok) throw new Error('Content file could not be loaded');
@@ -74,6 +132,11 @@ fetch('content/site.json')
       element.textContent = content.site.tagline;
     });
     if (content.site.navigation) updateNavigation(content.site.navigation);
+    updateSiteImages();
+
+    const quote = document.querySelector('.quote p');
+    if (quote && content.home.quote) quote.textContent = `“${content.home.quote}”`;
+    renderGallery(content.about);
 
     const contactEmail = document.querySelector('.contact-items .contact-item');
     if (contactEmail && content.contact.email) {
