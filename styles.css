@@ -99,7 +99,7 @@ h3 { font-size: 1.45rem; }
 .notice { margin-top: 28px; padding: 20px; background: var(--pink-soft); border-left: 5px solid var(--red); }
 .gallery-section { background: var(--cream); }
 .gallery-grid { position: relative; width: 100%; }
-.gallery-card { position: absolute; top: 0; left: 0; margin: 0; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 38px rgba(39,18,33,.1); transition: transform .22s ease, width .22s ease; }
+.gallery-card { position: absolute; top: 0; left: 0; margin: 0; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 38px rgba(39,18,33,.1); transition: transform .22s ease; }
 .gallery-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .gallery-card img { width: 100%; height: auto; transition: transform .25s ease; }
 .gallery-open:hover img { transform: scale(1.025); }
