@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 :root {
   --ink: #171217;
   --muted: #665d66;
@@ -33,7 +35,7 @@ img { max-width: 100%; display: block; }
 .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; text-decoration: none; letter-spacing: -.02em; }
 .brand img { width: 50px; height: 50px; border-radius: 10px; object-fit: cover; border: 1px solid var(--line); }
-.home-brand-wordmark { color: white; font-family: "Archivo Black", Impact, sans-serif; font-size: clamp(1.2rem, 2.5vw, 2rem); line-height: 1; letter-spacing: -.04em; text-transform: uppercase; -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; }
+.site-header .brand span { color: white; font-family: "Archivo Black", Impact, sans-serif; font-size: clamp(1.2rem, 2.5vw, 2rem); line-height: 1; letter-spacing: -.04em; text-transform: uppercase; -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; }
 .nav-links { display: flex; align-items: center; gap: 8px; }
 .nav-links a { text-decoration: none; font-weight: 750; padding: 10px 13px; border-radius: 999px; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { background: var(--pink-soft); }
@@ -154,7 +156,7 @@ footer { padding: 48px 0 28px; background: var(--ink); color: white; }
 }
 
 @media (max-width: 440px) {
-  .brand .home-brand-wordmark { display: block; width: 78px; font-size: 1.08rem; line-height: .92; text-align: center; }
+  .site-header .brand span { display: block; width: 78px; font-size: 1.08rem; line-height: .92; text-align: center; }
 }
 
 @media (max-width: 480px) {
