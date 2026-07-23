@@ -103,7 +103,7 @@ function renderGallery(about) {
     const image = document.createElement('img');
     image.src = safeLinkUrl(item.image);
     image.alt = item.alt || item.caption || '';
-    image.loading = 'lazy';
+    image.loading = 'eager';
     openButton.appendChild(image);
     figure.appendChild(openButton);
     if (item.caption) {
