@@ -88,7 +88,6 @@ function renderTickets(ticketConfig) {
           <p class="lead">${eventDescription}</p>
         </div>
         <div class="ticket-price">
-          <strong>Eventbrite</strong>
           <a class="btn btn-primary" href="${ticketUrl}" target="_blank" rel="noopener">Book tickets ↗</a>
         </div>
       </article>`;
