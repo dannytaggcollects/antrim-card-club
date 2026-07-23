@@ -150,6 +150,11 @@ fetch('content/site.json')
     const contactForm = document.querySelector('#contact-form');
     if (contactForm && content.contact.email) contactForm.dataset.recipient = content.contact.email;
 
+    document.querySelectorAll('[data-social]').forEach((link) => {
+      const url = content.contact[link.dataset.social];
+      if (url) link.href = safeLinkUrl(url);
+    });
+
     window.dispatchEvent(new CustomEvent('antrim-content-ready', { detail: content }));
   })
   .catch(() => {

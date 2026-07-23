@@ -108,6 +108,10 @@ h3 { font-size: 1.45rem; }
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; }
 .contact-items { display: grid; gap: 14px; margin-top: 28px; }
 .contact-item { padding: 18px; background: white; border: 2px solid var(--ink); border-radius: 16px; text-decoration: none; font-weight: 800; }
+.social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.social-links a { display: flex; align-items: center; gap: 10px; padding: 13px 14px; color: var(--ink); background: white; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; font-weight: 800; transition: transform .18s, box-shadow .18s; }
+.social-links a:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ink); }
+.social-links svg { width: 23px; height: 23px; flex: none; fill: currentColor; }
 form { display: grid; gap: 18px; }
 label { display: grid; gap: 7px; font-weight: 800; }
 input, textarea, select { width: 100%; border: 2px solid var(--ink); border-radius: 12px; padding: 13px 14px; background: white; color: var(--ink); font: inherit; }
@@ -115,6 +119,11 @@ textarea { min-height: 145px; resize: vertical; }
 input:focus, textarea:focus, select:focus { outline: 4px solid var(--pink); outline-offset: 1px; }
 button.btn { cursor: pointer; font: inherit; }
 .form-note { color: var(--muted); font-size: .9rem; margin: 0; }
+.form-status { min-height: 1.4em; margin: 0; font-weight: 800; }
+.form-status.is-success { color: #18733b; }
+.form-status.is-error { color: #a51c30; }
+.form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+form button:disabled { cursor: wait; opacity: .7; }
 
 .cta { margin: 0 auto 96px; padding: 52px; display: flex; align-items: center; justify-content: space-between; gap: 28px; background: var(--yellow); border: 3px solid var(--ink); border-radius: 28px; box-shadow: 10px 10px 0 var(--red); }
 .cta h2 { margin-bottom: 6px; }

@@ -107,6 +107,8 @@ content:
           - { name: email, label: Contact email, type: string }
           - { name: facebookUrl, label: Facebook URL, type: string }
           - { name: instagramUrl, label: Instagram URL, type: string }
+          - { name: tiktokUrl, label: TikTok URL, type: string }
+          - { name: youtubeUrl, label: YouTube URL, type: string }
 
 settings:
   content:

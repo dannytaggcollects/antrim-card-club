@@ -23,11 +23,34 @@ if (contactForm && requestedTopic) {
 
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  const submitButton = contactForm.querySelector('[type="submit"]');
+  const status = contactForm.querySelector('.form-status');
+  const recipient = contactForm.dataset.recipient || 'danny@antrimcardclub.com';
   const data = new FormData(contactForm);
-  const subject = encodeURIComponent(`${data.get('topic')} — ${data.get('name')}`);
-  const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
-  const recipient = contactForm.dataset.recipient || '';
-  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending…';
+  status.textContent = '';
+
+  fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
+    method: 'POST',
+    headers: { Accept: 'application/json' },
+    body: data
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error('Submission failed');
+      contactForm.reset();
+      status.className = 'form-status is-success';
+      status.textContent = 'Thanks — your message has been sent to Danny.';
+    })
+    .catch(() => {
+      status.className = 'form-status is-error';
+      status.textContent = 'Sorry, the message could not be sent. Please try again or email Danny directly.';
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send message →';
+    });
 });
 
 document.querySelectorAll('[data-year]').forEach((node) => node.textContent = new Date().getFullYear());
