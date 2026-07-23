@@ -180,6 +180,37 @@ function renderGallery(about) {
   wrap.append(header, grid);
   section.appendChild(wrap);
   organiserSection.after(section);
+
+  const galleryCards = [...grid.querySelectorAll('.gallery-card')];
+  let masonryFrame;
+  function layoutMasonry() {
+    const gridWidth = grid.clientWidth;
+    if (!gridWidth) return;
+    const gap = 22;
+    const columnCount = gridWidth >= 980 ? 4 : gridWidth >= 640 ? 2 : 1;
+    const columnWidth = (gridWidth - gap * (columnCount - 1)) / columnCount;
+    const columnHeights = Array(columnCount).fill(0);
+
+    galleryCards.forEach((card) => {
+      card.style.width = `${columnWidth}px`;
+      const shortestColumn = columnHeights.indexOf(Math.min(...columnHeights));
+      card.style.transform = `translate(${shortestColumn * (columnWidth + gap)}px, ${columnHeights[shortestColumn]}px)`;
+      columnHeights[shortestColumn] += card.offsetHeight + gap;
+    });
+
+    grid.style.height = `${Math.max(...columnHeights, 0) - gap}px`;
+  }
+
+  function scheduleMasonryLayout() {
+    cancelAnimationFrame(masonryFrame);
+    masonryFrame = requestAnimationFrame(layoutMasonry);
+  }
+
+  grid.querySelectorAll('img').forEach((image) => {
+    if (!image.complete) image.addEventListener('load', scheduleMasonryLayout, { once: true });
+  });
+  new ResizeObserver(scheduleMasonryLayout).observe(grid);
+  scheduleMasonryLayout();
 }
 
 fetch('content/site.json')

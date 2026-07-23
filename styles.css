@@ -98,8 +98,8 @@ h3 { font-size: 1.45rem; }
 .ticket-price strong { display: block; font-size: 1.6rem; }
 .notice { margin-top: 28px; padding: 20px; background: var(--pink-soft); border-left: 5px solid var(--red); }
 .gallery-section { background: var(--cream); }
-.gallery-grid { columns: 4 220px; column-gap: 22px; }
-.gallery-card { break-inside: avoid; margin: 0 0 22px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 38px rgba(39,18,33,.1); }
+.gallery-grid { position: relative; width: 100%; }
+.gallery-card { position: absolute; top: 0; left: 0; margin: 0; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 38px rgba(39,18,33,.1); transition: transform .22s ease, width .22s ease; }
 .gallery-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .gallery-card img { width: 100%; height: auto; transition: transform .25s ease; }
 .gallery-open:hover img { transform: scale(1.025); }
@@ -154,10 +154,6 @@ footer { padding: 48px 0 28px; background: var(--ink); color: white; }
 .footer-links a { color: var(--pink); font-weight: 800; }
 .copyright { padding-top: 32px; margin-top: 32px; border-top: 1px solid #443b44; color: #b9afb8; font-size: .9rem; }
 
-@media (max-width: 1000px) {
-  .gallery-grid { columns: 2 220px; }
-}
-
 @media (max-width: 800px) {
   .menu-btn { display: block; }
   .nav-links { display: none; position: absolute; left: 20px; right: 20px; top: 68px; padding: 14px; flex-direction: column; align-items: stretch; background: white; border: 2px solid var(--ink); border-radius: 18px; box-shadow: 7px 7px 0 var(--ink); }
@@ -166,7 +162,6 @@ footer { padding: 48px 0 28px; background: var(--ink); color: white; }
   .hero { grid-template-columns: 1fr; padding-top: 52px; gap: 24px; }
   .hero-art { min-height: 390px; }
   .cards, .split, .info-grid, .contact-grid { grid-template-columns: 1fr; }
-  .gallery-grid { columns: 1; }
   .section-head, .cta, .footer-grid { align-items: start; flex-direction: column; }
   .ticket-card { grid-template-columns: 1fr; }
   .ticket-price { text-align: left; }
