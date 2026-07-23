@@ -89,21 +89,92 @@ function renderGallery(about) {
 
   const grid = document.createElement('div');
   grid.className = 'gallery-grid';
+  const lightboxItems = [];
   about.gallery.forEach((item) => {
     if (!item?.image) return;
+    const itemIndex = lightboxItems.length;
+    lightboxItems.push(item);
     const figure = document.createElement('figure');
     figure.className = 'gallery-card';
+    const openButton = document.createElement('button');
+    openButton.className = 'gallery-open';
+    openButton.type = 'button';
+    openButton.setAttribute('aria-label', `Open image: ${item.alt || item.caption || `Gallery image ${itemIndex + 1}`}`);
     const image = document.createElement('img');
     image.src = safeLinkUrl(item.image);
     image.alt = item.alt || item.caption || '';
     image.loading = 'lazy';
-    figure.appendChild(image);
+    openButton.appendChild(image);
+    figure.appendChild(openButton);
     if (item.caption) {
       const caption = document.createElement('figcaption');
       caption.textContent = item.caption;
       figure.appendChild(caption);
     }
+    openButton.addEventListener('click', () => openLightbox(itemIndex));
     grid.appendChild(figure);
+  });
+
+  const lightbox = document.createElement('dialog');
+  lightbox.className = 'gallery-lightbox';
+  lightbox.setAttribute('aria-label', 'Gallery image viewer');
+  const lightboxFrame = document.createElement('div');
+  lightboxFrame.className = 'lightbox-frame';
+  const closeButton = document.createElement('button');
+  closeButton.className = 'lightbox-close';
+  closeButton.type = 'button';
+  closeButton.setAttribute('aria-label', 'Close image viewer');
+  closeButton.textContent = '×';
+  const previousButton = document.createElement('button');
+  previousButton.className = 'lightbox-nav lightbox-previous';
+  previousButton.type = 'button';
+  previousButton.setAttribute('aria-label', 'Previous image');
+  previousButton.textContent = '‹';
+  const nextButton = document.createElement('button');
+  nextButton.className = 'lightbox-nav lightbox-next';
+  nextButton.type = 'button';
+  nextButton.setAttribute('aria-label', 'Next image');
+  nextButton.textContent = '›';
+  const lightboxImage = document.createElement('img');
+  const lightboxCaption = document.createElement('p');
+  lightboxCaption.className = 'lightbox-caption';
+  lightboxFrame.append(closeButton, previousButton, lightboxImage, nextButton, lightboxCaption);
+  lightbox.appendChild(lightboxFrame);
+  document.body.appendChild(lightbox);
+
+  let activeIndex = 0;
+  function showLightboxItem(index) {
+    activeIndex = (index + lightboxItems.length) % lightboxItems.length;
+    const item = lightboxItems[activeIndex];
+    lightboxImage.src = safeLinkUrl(item.image);
+    lightboxImage.alt = item.alt || item.caption || '';
+    lightboxCaption.textContent = item.caption || '';
+    const hasMultipleImages = lightboxItems.length > 1;
+    previousButton.hidden = !hasMultipleImages;
+    nextButton.hidden = !hasMultipleImages;
+  }
+
+  function openLightbox(index) {
+    showLightboxItem(index);
+    lightbox.showModal();
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.close();
+    document.body.classList.remove('lightbox-open');
+  }
+
+  closeButton.addEventListener('click', closeLightbox);
+  previousButton.addEventListener('click', () => showLightboxItem(activeIndex - 1));
+  nextButton.addEventListener('click', () => showLightboxItem(activeIndex + 1));
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  lightbox.addEventListener('close', () => document.body.classList.remove('lightbox-open'));
+  lightbox.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showLightboxItem(activeIndex - 1);
+    if (event.key === 'ArrowRight') showLightboxItem(activeIndex + 1);
   });
 
   wrap.append(header, grid);
