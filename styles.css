@@ -122,6 +122,12 @@ body.lightbox-open { overflow: hidden; }
 .ticket-embed-head h2 { margin: 12px 0 0; }
 .ticket-embed-head a { font-weight: 900; white-space: nowrap; }
 .ticket-embed iframe { display: block; width: 100%; height: 720px; border: 0; background: white; }
+.eventbrite-booking { display: grid; grid-template-columns: minmax(220px, .65fr) minmax(420px, 1.35fr); gap: 34px; align-items: start; margin-top: 42px; padding: 34px; background: white; border: 3px solid var(--ink); border-radius: 24px; box-shadow: 10px 10px 0 var(--pink); }
+.eventbrite-booking-copy { padding: 16px 4px; }
+.eventbrite-widget-shell { min-height: 425px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 18px; }
+.eventbrite-widget-shell iframe { display: block; width: 100%; min-height: 425px; border: 0; }
+.home-booking { background: var(--pink-soft); }
+.home-booking .eventbrite-widget-shell { max-width: 900px; margin-inline: auto; box-shadow: var(--shadow); }
 
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; }
 .contact-items { display: grid; gap: 14px; margin-top: 28px; }
@@ -167,6 +173,7 @@ footer { padding: 48px 0 28px; background: var(--ink); color: white; }
   .ticket-price { text-align: left; }
   .ticket-embed-head { align-items: flex-start; flex-direction: column; }
   .ticket-embed iframe { height: 660px; }
+  .eventbrite-booking { grid-template-columns: 1fr; padding: 24px; }
   .section { padding: 70px 0; }
 }
 

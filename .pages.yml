@@ -97,6 +97,7 @@ content:
                 - { name: direct, label: Link directly to Eventbrite }
                 - { name: embed, label: Embed Eventbrite booking }
           - { name: eventbriteUrl, label: Public Eventbrite URL, type: string }
+          - { name: eventbriteEventId, label: Eventbrite event ID, type: string, help: "The number from the Eventbrite widget code, for example 1996413693098." }
           - { name: embedUrl, label: Eventbrite embed URL, type: string }
       - name: contact
         label: Contact page
