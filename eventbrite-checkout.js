@@ -37,7 +37,13 @@
   }
 
   window.addEventListener('antrim-content-ready', (event) => {
-    loadWidget(event.detail?.tickets?.eventbriteEventId || '1996413693098');
+    const tickets = event.detail?.tickets;
+    if (tickets?.eventbriteUrl) {
+      document.querySelectorAll('[data-eventbrite-external-link]').forEach((link) => {
+        link.href = tickets.eventbriteUrl;
+      });
+    }
+    loadWidget(tickets?.eventbriteEventId || '1996413693098');
   });
 
   setTimeout(() => loadWidget('1996413693098'), 1500);
