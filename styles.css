@@ -127,6 +127,10 @@ body.lightbox-open { overflow: hidden; }
 .eventbrite-booking-copy .btn { margin-top: 12px; }
 .eventbrite-widget-shell { min-height: 425px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 18px; }
 .eventbrite-widget-shell iframe { display: block; width: 100%; min-height: 425px; border: 0; }
+.tickets-widget-section { padding: 22px 0 64px; }
+.tickets-widget-section .eventbrite-widget-shell { border-radius: 18px; box-shadow: var(--shadow); }
+.tickets-external-action { display: flex; justify-content: center; margin-top: 24px; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
 .home-booking { background: var(--pink-soft); }
 .home-booking .eventbrite-widget-shell { max-width: 900px; margin-inline: auto; box-shadow: var(--shadow); }
 
