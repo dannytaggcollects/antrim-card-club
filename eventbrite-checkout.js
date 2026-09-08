@@ -29,7 +29,7 @@
     let script = document.querySelector('script[data-eventbrite-widget-script]');
     if (!script) {
       script = document.createElement('script');
-      script.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
+      script.src = 'https://www.eventbrite.co.uk/static/widgets/eb_widgets.js';
       script.dataset.eventbriteWidgetScript = '';
       document.head.appendChild(script);
     }
@@ -43,8 +43,8 @@
         link.href = tickets.eventbriteUrl;
       });
     }
-    loadWidget(tickets?.eventbriteEventId || '1996413693098');
+    loadWidget(tickets?.eventbriteEventId || '1999298554797');
   });
 
-  setTimeout(() => loadWidget('1996413693098'), 1500);
+  setTimeout(() => loadWidget('1999298554797'), 1500);
 })();

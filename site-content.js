@@ -6,7 +6,8 @@ const richTextPaths = new Set([
   'home.intro', 'home.sectionIntro', 'home.featureOneText', 'home.featureTwoText',
   'home.featureThreeText', 'home.storyText', 'about.intro', 'about.mainText',
   'about.mainTextTwo', 'about.organiserText', 'tickets.intro',
-  'tickets.eventDescription', 'contact.intro'
+  'tickets.eventDescription', 'contact.intro', 'home.announcementIntro',
+  'home.sanctuaryQuote', 'home.announcementClosing'
 ]);
 
 function escapeHtml(value) {
@@ -235,6 +236,11 @@ fetch('content/site.json')
     });
     if (content.site.navigation) updateNavigation(content.site.navigation);
     updateSiteImages();
+
+    const announcementImage = document.querySelector('[data-announcement-image]');
+    if (announcementImage && content.home.announcementImage) {
+      announcementImage.src = safeLinkUrl(content.home.announcementImage);
+    }
 
     const quote = document.querySelector('.quote p');
     if (quote && content.home.quote) quote.textContent = `“${content.home.quote}”`;

@@ -48,6 +48,11 @@ content:
           - { name: storyTitle, label: Story heading, type: string }
           - { name: storyText, label: Story text, type: rich-text }
           - { name: quote, label: Community quote, type: string }
+          - { name: announcementTitle, label: Giving-back announcement heading, type: string }
+          - { name: announcementIntro, label: Giving-back introduction, type: rich-text }
+          - { name: sanctuaryQuote, label: Sanctuary quote, type: rich-text }
+          - { name: announcementClosing, label: Giving-back closing paragraph, type: rich-text }
+          - { name: announcementImage, label: Giving-back image, type: image }
       - name: about
         label: About page
         type: object

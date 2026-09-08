@@ -28,7 +28,12 @@
     "featureThreeText": "New to collecting or years into the hobby? There’s a place for everyone at Antrim Card Club!",
     "storyTitle": "Built Around The Joy Of The Hobby",
     "storyText": "Antrim Card Club brings collectors together in a relaxed, friendly space where the cards start the conversation.",
-    "quote": "Community is the heart beat of the hobby"
+    "quote": "Community is the heart beat of the hobby",
+    "announcementTitle": "Antrim Card Club giving back to the community",
+    "announcementIntro": "Antrim Card Club wants to give back to the community, so we have decided to make a donation on a monthly ongoing basis to the wonderful Mid Antrim Animal Sanctuary.",
+    "sanctuaryQuote": "“The Sanctuary has a proud history of animal re-homing, education and relieving the suffering and stress of animals. For nearly 35 years our Sanctuary has provided animal welfare and re-homing for companion animals.”",
+    "announcementClosing": "You may find the cost of your ticket increases but a portion of all ticket sales will be going directly to the Sanctuary as a donation from the Antrim Card Club on behalf of the wonderful community.",
+    "announcementImage": "assets/mid-antrim-animal-sanctuary.png"
   },
   "about": {
     "title": "Collecting Brings Us Together.",
@@ -99,8 +104,8 @@
     "eventName": "Antrim Card Club - August Edition",
     "eventDescription": "1st August 2026. \n\n11am-3pm\n\nSt Josephs Parish Community Hall, Antrim. ",
     "mode": "direct",
-    "eventbriteUrl": "https://antrim-card-club-august.eventbrite.co.uk/",
-    "eventbriteEventId": "1996413693098"
+    "eventbriteUrl": "https://www.eventbrite.co.uk/e/antrim-card-club-october-edition-tickets-1999298554797",
+    "eventbriteEventId": "1999298554797"
   },
   "contact": {
     "title": "Let’s talk!",
