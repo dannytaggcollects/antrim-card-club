@@ -43,8 +43,8 @@
         link.href = tickets.eventbriteUrl;
       });
     }
-    loadWidget(tickets?.eventbriteEventId || '1999298554797');
+    loadWidget(tickets?.eventbriteEventId || '2002380245216');
   });
 
-  setTimeout(() => loadWidget('1999298554797'), 1500);
+  setTimeout(() => loadWidget('2002380245216'), 1500);
 })();
